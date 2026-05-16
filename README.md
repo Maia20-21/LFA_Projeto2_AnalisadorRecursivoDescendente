@@ -119,4 +119,3 @@ ERRO na posicao 2: caractere inesperado '*'
 
 ---
 
-**Entrega até as 18h00 do dia 29 de maio de 2026.**

@@ -57,12 +57,71 @@ int K(char palavra[], int *pos) {
     }
 }
 
-// CONTINUE AS FUNÇOES DAS OUTRAS LETRAS AQUI!!!!
+int T(char palavra[], int *pos) {
+    if (F(palavra, pos) &&
+        Z(palavra, pos))
+        return 1;
+    else
+        return 0;
+}
+//divisao e multiplicacao
+int Z(char palavra[], int *pos) {
+    if (lookahead == '*') {
+        if (match('*', palavra, pos) &&
+            T(palavra, pos) &&
+            Z(palavra, pos))
+            return 1;
+        else
+            return 0;
 
+    } else if (lookahead == '/') {
+        if (match('/', palavra, pos) &&
+            T(palavra, pos) &&
+            Z(palavra, pos))
+            return 1;
+        else
+            return 0;
 
+    } else {
+        return 1;
+    }
+}
+//fator simples
+int F(char palavra[], int *pos) {
+    if (lookahead == '(') {
+        if (match('(', palavra, pos) &&
+            E(palavra, pos) &&
+            match(')', palavra, pos))
+            return 1;
+        else
+            return 0;
 
+    } else if (lookahead >= '0' && lookahead <= '9') {
+        if (N(palavra, pos))
+            return 1;
+        else
+            return 0;
 
+    } else {
+        return 0;
+    }
+}
+//numeros
+int N(char palavra[], int *pos) {
+    if (lookahead >= '0' && lookahead <= '9') {
+        match(lookahead, palavra, pos);
 
+        if (lookahead >= '0' && lookahead <= '9') {
+            N(palavra, pos);
+        }
+
+        return 1;
+    }
+
+    return 0;
+}
+
+//COLOQUE AQUI A FUNCAO DE TRATAMENTO DE ERRO
 
 int main() {
     char expressao[1000];

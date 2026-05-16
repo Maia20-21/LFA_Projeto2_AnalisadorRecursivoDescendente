@@ -1,8 +1,8 @@
 /*
  * GRUPO:
  * Bruna Amorim Maia - 10431883
- * [] - []
- * [] - [] 
+ * Caio Guilherme dos Santos Silva - 10420097
+ * Fabyani Tiva Yan - 10431835 
  */
 
 #include <stdio.h>

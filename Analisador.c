@@ -121,7 +121,7 @@ int N(char palavra[], int *pos) {
     return 0;
 }
 
-//COLOQUE AQUI A FUNCAO DE TRATAMENTO DE ERRO
+//COLOQUE AQUI A FUNCAO DE TRATAMENTO DE ERRO 
 
 int main() {
     char expressao[1000];

@@ -253,6 +253,7 @@ int main() {
     printf("Analisando...\n\n");
 
     pos = 0;
+    pos_erro_max = 0;
     lookahead = expressao[pos];
 
     if (E(expressao, &pos) && lookahead == '$') {
